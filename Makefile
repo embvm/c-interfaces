@@ -11,3 +11,7 @@ main.o: test/main.c
 
 format:
 	@ clang-format -i $(ALL_HEADERS)
+
+docs:
+	@ mkdir -p buildresults/documentation
+	@ doxygen
