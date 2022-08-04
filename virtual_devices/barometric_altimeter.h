@@ -36,7 +36,7 @@
  *      calculations will assume 1013.25 hPa.
  * - Altitude will be formatted as a 32-bit fixed-point integer with format Q21.10,
  *   giving a resolution of 0.001 m.
- * - The device will indicate whether the current reading is valid or invalid
+ * - The device will indicate whether the current reading is valid or invalid.
  *
  * ## Implementation Notes
  *
