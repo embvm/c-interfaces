@@ -108,7 +108,7 @@ typedef void (*NewHumiditySampleCb)(int16_t humidity);
  */
 typedef void (*HumidityErrorCb)(void);
 
-/** Virtual Relative Humidity Sensor Interface
+/** Virtual Relative Humidity Sensor Interface with Callback Support
  *
  * A standard interface for a device which can measure relative humidity. Interested parties can
  * receive callbacks when new samples are available.
