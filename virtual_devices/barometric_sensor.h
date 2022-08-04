@@ -73,7 +73,7 @@ typedef struct
 	 * @post If the measurement is invalid, the data pointed to by the pressure parameter
 	 * 		 will remain unchanged.
 	 *
-	 * @param inout pressure
+	 * @param[inout] pressure
 	 *  Pointer which will be used for storing the latest pressure reading. This pointer
 	 *  must not be null.
 	 *
@@ -102,7 +102,7 @@ typedef struct
 
 	/** Set the sea level pressure
 	 *
-	 * @input slp The current sea level pressure in hPa.
+	 * @param[in] slp The current sea level pressure in hPa.
 	 * 	slp should be specified as an unsigned 32-bit fixed-point number in format UQ22.10.
 	 */
 	void (*setSeaLevelPressure)(uint32_t slp);
@@ -120,12 +120,12 @@ typedef struct
  * new sample and perform some dispatching operation (e.g., add the value to a queue),
  * ensuring that any "heavy" processing happens on a new thread.
  *
- * @param in pressure The latest pressure sample.
+ * @param[in] pressure The latest pressure sample.
  *
  *  Pressure will be formatted as a 32-bit fixed-point integer with format UQ22.10,
  *  giving a resolution of 0.001 hPa.
  *
- * @param in altitude The latest altitude sample.
+ * @param[in] altitude The latest altitude sample.
  *
  *  Altitude will be formatted as a signed 32-bit fixed-point number in format Q21.10.
  *
@@ -199,7 +199,7 @@ typedef struct
 	 * @post If the measurement is not valid, registered Error callbacks will be invoked
 	 * 		  or dispatched.
 	 *
-	 * @param inout pressure
+	 * @param[inout] pressure
 	 *  Pointer which will be used for storing the latest pressure reading.
 	 *
 	 * 	If pressure is NULL, the function will only supply the pressure sample to
@@ -227,7 +227,7 @@ typedef struct
 	 * @post If the measurement is not valid, registered Error callbacks will be invoked
 	 * 		  or dispatched.
 	 *
-	 * @param inout altitude
+	 * @param[inout] altitude
 	 *  Pointer which will be used for storing the latest altitude reading.
 	 *
 	 * 	If altitude is NULL, the function will only supply the altitude sample to
@@ -249,7 +249,7 @@ typedef struct
 	 * @pre callback is not NULL
 	 * @post callback is added to the list of "new sample" callbacks.
 	 *
-	 * @param in callback
+	 * @param[in] callback
 	 * 	The callback function pointer to register on the "new sample" callback list.
 	 */
 	void (*registerNewSampleCb)(const NewBarometricSampleCb callback);
@@ -262,7 +262,7 @@ typedef struct
 	 *
 	 * @post callback function pointer is not present on the list of "new sample" callbacks.
 	 *
-	 * @param in callback
+	 * @param[in] callback
 	 * 	The callback function pointer to remove from the "new sample" callback list.
 	 */
 	void (*unregisterNewSampleCb)(const NewBarometricSampleCb callback);
@@ -275,7 +275,7 @@ typedef struct
 	 * @pre callback is not NULL
 	 * @post callback is added to the list of error callbacks.
 	 *
-	 * @param in callback
+	 * @param[in] callback
 	 * 	The callback function pointer to register on the "error" callback list.
 	 */
 	void (*registerErrorCb)(const BarometricErrorCb callback);
@@ -288,7 +288,7 @@ typedef struct
 	 *
 	 * @post callback function pointer is not present on the list of "error" callbacks.
 	 *
-	 * @param in callback
+	 * @param[in] callback
 	 * 	The callback function pointer to remove from the "error" callback list.
 	 */
 	void (*unregisterErrorCb)(const BarometricErrorCb callback);
@@ -358,7 +358,7 @@ typedef struct
 	 * @pre callback is not NULL
 	 * @post callback is added to the list of "new sample" callbacks.
 	 *
-	 * @param in callback
+	 * @param[in] callback
 	 * 	The callback function pointer to register on the "new sample" callback list.
 	 */
 	void (*registerNewSampleCb)(const NewBarometricSampleCb callback);
@@ -371,7 +371,7 @@ typedef struct
 	 *
 	 * @post callback function pointer is not present on the list of "new sample" callbacks.
 	 *
-	 * @param in callback
+	 * @param[in] callback
 	 * 	The callback function pointer to remove from the "new sample" callback list.
 	 */
 	void (*unregisterNewSampleCb)(const NewBarometricSampleCb callback);
@@ -384,7 +384,7 @@ typedef struct
 	 * @pre callback is not NULL
 	 * @post callback is added to the list of error callbacks.
 	 *
-	 * @param in callback
+	 * @param[in] callback
 	 * 	The callback function pointer to register on the "error" callback list.
 	 */
 	void (*registerErrorCb)(const BarometricErrorCb callback);
@@ -397,7 +397,7 @@ typedef struct
 	 *
 	 * @post callback function pointer is not present on the list of "error" callbacks.
 	 *
-	 * @param in callback
+	 * @param[in] callback
 	 * 	The callback function pointer to remove from the "error" callback list.
 	 */
 	void (*unregisterErrorCb)(const BarometricErrorCb callback);

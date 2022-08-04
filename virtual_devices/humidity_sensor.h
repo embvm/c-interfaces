@@ -66,7 +66,7 @@ typedef struct
 	 * @post If the measurement is invalid, the data pointed to by the humidity parameter
 	 *       will remain unchanged.
 	 *
-	 * @param inout Current relative humidity in %.
+	 * @param[inout] Current relative humidity in %.
 	 *	Humidity is specified as an integral perecentage.
 	 *
 	 * @returns True if the sample is valid, false if invalid (e.g., an error occured)
@@ -88,10 +88,10 @@ typedef struct
  * new sample and perform some dispatching operation (e.g., add the value to a queue),
  * ensuring that any "heavy" processing happens on a new thread.
  *
- * @param in humidity The latest humidity sample.
+ * @param[in] humidity The latest humidity sample.
  *  Humidity is specified as an integral perecentage.
  */
-typedef void (*NewHumiditySampleCb)(int16_t pressure);
+typedef void (*NewHumiditySampleCb)(int16_t humidity);
 
 /** Callback function prototype for humidity sensor errors
  *
@@ -129,7 +129,7 @@ typedef void (*HumidityErrorCb)(void);
  * ## Implementation Notes
  *
  * - This interface, at its core, appears to be blocking. However, you can still implement this
- *   interface in a non-blocking way. For example, you could always return the most recent pressure
+ *   interface in a non-blocking way. For example, you could always return the most recent humidity
  *   measurement, while there is another thread that handles updates to that measurement
  *   asynchronously.
  * - Note that the callback registration functions do not support error handling.
@@ -150,7 +150,7 @@ typedef struct
 	 * @post If the measurement is not valid, registered Error callbacks will be invoked
 	 *        or dispatched.
 	 *
-	 * @param inout humidity Current relative humidity in %.
+	 * @param[inout] humidity Current relative humidity in %.
 	 *  If humidity is NULL, the function will only supply the humidity sample to
 	 *  registered callback functions.
 	 *
@@ -168,7 +168,7 @@ typedef struct
 	 * @pre callback is not NULL
 	 * @post callback is added to the list of "new sample" callbacks.
 	 *
-	 * @param in callback
+	 * @param[in] callback
 	 *  The callback function pointer to register on the "new sample" callback list.
 	 */
 	void (*registerNewSampleCb)(const NewHumiditySampleCb callback);
@@ -181,7 +181,7 @@ typedef struct
 	 *
 	 * @post callback function pointer is not present on the list of "new sample" callbacks.
 	 *
-	 * @param in callback
+	 * @param[in] callback
 	 *  The callback function pointer to remove from the "new sample" callback list.
 	 */
 	void (*unregisterNewSampleCb)(const NewHumiditySampleCb callback);
@@ -189,12 +189,12 @@ typedef struct
 	/** Register a HumidityErrorCb function
 	 *
 	 * This function will add the callback input to a list of functions to execute
-	 * when a pressure sensor error occurs.
+	 * when a humidity sensor error occurs.
 	 *
 	 * @pre callback is not NULL
 	 * @post callback is added to the list of error callbacks.
 	 *
-	 * @param in callback
+	 * @param[in] callback
 	 *  The callback function pointer to register on the "error" callback list.
 	 */
 	void (*registerErrorCb)(const HumidityErrorCb callback);
@@ -207,7 +207,7 @@ typedef struct
 	 *
 	 * @post callback function pointer is not present on the list of "error" callbacks.
 	 *
-	 * @param in callback
+	 * @param[in] callback
 	 *  The callback function pointer to remove from the "error" callback list.
 	 */
 	void (*unregisterErrorCb)(const HumidityErrorCb callback);

@@ -69,7 +69,7 @@ typedef struct
 	 * @post If the measurement is invalid, the data pointed to by the temperature parameter
 	 * 		 will remain unchanged.
 	 *
-	 * @param inout Current temperature in °C.
+	 * @param[inout] Current temperature in °C.
 	 *	Temperature readings will be provided as a signed 16-bit fixed point integer in format Q7.8
 	 *
 	 * @returns True if the sample is valid, false if invalid (e.g., an error occured)
@@ -89,12 +89,12 @@ typedef struct
  * new sample and perform some dispatching operation (e.g., add the value to a queue),
  * ensuring that any "heavy" processing happens on a new thread.
  *
- * @param in temperature The latest temperature sample.
+ * @param[in] temperature The latest temperature sample.
  *
  *  Temperature readings will be provided as a signed 16-bit fixed point integer in format Q7.8.
  *
  */
-typedef void (*NewTemperatureSampleCb)(int16_t pressure);
+typedef void (*NewTemperatureSampleCb)(int16_t temperature);
 
 /** Callback function prototype for temperature sensor errors
  *
@@ -133,7 +133,7 @@ typedef void (*TemperatureErrorCb)(void);
  * ## Implementation Notes
  *
  * - This interface, at its core, appears to be blocking. However, you can still implement this
- *   interface in a non-blocking way. For example, you could always return the most recent pressure
+ *   interface in a non-blocking way. For example, you could always return the most recent
  *   measurement, while there is another thread that handles updates to that measurement
  *   asynchronously.
  * - Note that the callback registration functions do not support error handling.
@@ -154,7 +154,7 @@ typedef struct
 	 * @post If the measurement is not valid, registered Error callbacks will be invoked
 	 * 		  or dispatched.
 	 *
-	 * @param inout temperature
+	 * @param[inout] temperature
 	 *  Pointer which will be used for storing the latest temperature reading.
 	 *
 	 * 	If temperature is NULL, the function will only supply the temperature sample to
@@ -164,7 +164,7 @@ typedef struct
 	 *
 	 * @returns True if the sample is valid, false if invalid (e.g., an error occured)
 	 *
-	 * @param inout Current temperature in °C.
+	 * @param[inout] Current temperature in °C.
 	 *	Temperature readings will be provided as a signed 16-bit fixed point integer in format Q7.8
 	 *
 	 * @returns True if the sample is valid, false if invalid (e.g., an error occured)
@@ -179,7 +179,7 @@ typedef struct
 	 * @pre callback is not NULL
 	 * @post callback is added to the list of "new sample" callbacks.
 	 *
-	 * @param in callback
+	 * @param[in] callback
 	 * 	The callback function pointer to register on the "new sample" callback list.
 	 */
 	void (*registerNewSampleCb)(const NewTemperatureSampleCb callback);
@@ -192,7 +192,7 @@ typedef struct
 	 *
 	 * @post callback function pointer is not present on the list of "new sample" callbacks.
 	 *
-	 * @param in callback
+	 * @param[in] callback
 	 * 	The callback function pointer to remove from the "new sample" callback list.
 	 */
 	void (*unregisterNewSampleCb)(const NewTemperatureSampleCb callback);
@@ -200,12 +200,12 @@ typedef struct
 	/** Register a TemperatureErrorCb function
 	 *
 	 * This function will add the callback input to a list of functions to execute
-	 * when a pressure sensor error occurs.
+	 * when a temperature sensor error occurs.
 	 *
 	 * @pre callback is not NULL
 	 * @post callback is added to the list of error callbacks.
 	 *
-	 * @param in callback
+	 * @param[in] callback
 	 * 	The callback function pointer to register on the "error" callback list.
 	 */
 	void (*registerErrorCb)(const TemperatureErrorCb callback);
@@ -218,7 +218,7 @@ typedef struct
 	 *
 	 * @post callback function pointer is not present on the list of "error" callbacks.
 	 *
-	 * @param in callback
+	 * @param[in] callback
 	 * 	The callback function pointer to remove from the "error" callback list.
 	 */
 	void (*unregisterErrorCb)(const TemperatureErrorCb callback);

@@ -31,8 +31,8 @@
  * ## Fundamental Assumptions
  *
  * - The device produces barometric altitude readings
- * 	- This device reports barometric altitude in meters
- *    - Altitude will be corrected for Sea Level Pressure. If no value for SLP has been supplied,
+ *  - This device reports barometric altitude in meters
+ *  - Altitude will be corrected for Sea Level Pressure. If no value for SLP has been supplied,
  *      calculations will assume 1013.25 hPa.
  * - Altitude will be formatted as a 32-bit fixed-point integer with format Q21.10,
  *   giving a resolution of 0.001 m.
@@ -58,7 +58,7 @@ typedef struct
 	 * @post If the measurement is invalid, the data pointed to by the altitude parameter
 	 *       will remain unchanged.
 	 *
-	 * @param inout Current altitude in meters (m), corrected for sea level pressure.
+	 * @param[inout] Current altitude in meters (m), corrected for sea level pressure.
 	 *	Altitude is specified as a signed 32-bit fixed-point number in format Q21.10.
 	 *
 	 * @returns True if the sample is valid, false if invalid (e.g., an error occured)
@@ -67,7 +67,7 @@ typedef struct
 
 	/** Set the sea level pressure
 	 *
-	 * @param in slp The current sea level pressure in hPa.
+	 * @param[in] slp The current sea level pressure in hPa.
 	 * 	slp should be specified as an unsigned 32-bit fixed-point number in format UQ22.10.
 	 */
 	void (*setSeaLevelPressure)(const uint32_t slp);

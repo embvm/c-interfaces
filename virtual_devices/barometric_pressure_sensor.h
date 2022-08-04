@@ -57,7 +57,7 @@ typedef struct
 	 * @post If the measurement is invalid, the data pointed to by the pressure parameter
 	 * 		 will remain unchanged.
 	 *
-	 * @param inout pressure
+	 * @param[inout] pressure
 	 *  Pointer which will be used for storing the latest pressure reading. This pointer
 	 *  must not be null.
 	 *
