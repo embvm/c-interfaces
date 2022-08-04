@@ -12,6 +12,9 @@ This collection is intended to serve as a reference only. The interfaces are sub
 
 ## Organization
 
+- [interface_patterns](interface_patterns/) contain common interface patterns that you can use to extend a basic interface definition with specific support.
+- [os](os/) contains OS-related interfaces.
+- [template_methods](template_methods/) provide small examples of standalone function pointers that are commonly used as either decoupling mechanisms or as "configurable steps" in a "template method" pattern. For example, if you have a driver that talks over SPI, you can incorporate the function pattern in [template_methods/spi_transfer.h](template_methods/spi_transfer.h) instead of creating a dependency on a full-fledged SPI abstraction.
 - [virtual_devices](virtual_devices/) contains abstract interfaces that can be mapped onto hardware devices.
 
 ## Interface Conventions
