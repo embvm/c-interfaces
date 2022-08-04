@@ -5,6 +5,7 @@ This is a collection of abstract interfaces written in C. You can view this coll
 - A ongoing study in interface design and documentation
 - A reference library of abstract interfaces we've found useful
 - A source of inspiration for creating your own interfaces
+- Examples of how the same basic interface concept can be varied to support different use cases (e.g., blocking vs non-blocking)
 - Example interfaces you can take, modify, and use on your own projects
 
 This collection is intended to serve as a reference only. The interfaces are subject to change. Do not rely on this repository remaining fixed - no guarantees are provided. If you need something, make a copy!
