@@ -36,7 +36,7 @@
 
 #pragma mark - Basic Interface -
 
-/** Virtual Barometric Pressure Sensor Interface
+/** Virtual Barometric Pressure/Altimeter Sensor Interface
  *
  * A standard interface for a device which can measure barometric pressure.
  *
@@ -147,7 +147,7 @@ typedef void (*NewBarometricSampleCb)(uint32_t pressure, int32_t altitude);
  */
 typedef void (*BarometricErrorCb)(void);
 
-/** Virtual Barometric Pressure Sensor Interface (with callback support)
+/** Virtual Barometric Pressure/Altimeter Interface (with callback support)
  *
  * A standard interface for a device which can measure barometric pressure. In this variant, the
  * readPressure() and readAltitude() functions can be used in the following ways:
@@ -296,7 +296,7 @@ typedef struct
 
 #pragma mark - Asynchronous Processing Support -
 
-/** Virtual Barometric Pressure Sensor Interface (asynchronous mode)
+/** Virtual Barometric Pressure/Altimeter Interface (asynchronous mode)
  *
  * A standard interface for a device which can measure barometric pressure. This interface
  * is intended for use with _asynchronous_ implementations. That is, the readPressure() function
