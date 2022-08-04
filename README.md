@@ -10,6 +10,13 @@ This is a collection of abstract interfaces written in C. You can view this coll
 
 This collection is intended to serve as a reference only. The interfaces are subject to change. Do not rely on this repository remaining fixed - no guarantees are provided. If you need something, make a copy!
 
+## Organization
+
+- [interface_patterns](interface_patterns/) contain common interface patterns that you can use to extend a basic interface definition with specific support.
+- [os](os/) contains OS-related interfaces.
+- [template_methods](template_methods/) provide small examples of standalone function pointers that are commonly used as either decoupling mechanisms or as "configurable steps" in a "template method" pattern. For example, if you have a driver that talks over SPI, you can incorporate the function pattern in [template_methods/spi_transfer.h](template_methods/spi_transfer.h) instead of creating a dependency on a full-fledged SPI abstraction.
+- [virtual_devices](virtual_devices/) contains abstract interfaces that can be mapped onto hardware devices.
+
 ## Interface Conventions
 
 In general, our interface design adheres to the following conventions:
@@ -22,7 +29,7 @@ In general, our interface design adheres to the following conventions:
 	
 ## Interface Scope
 
-In general, we have opted to keep the interfaces as simple as possible. You will probably see interfaces with fewer functions than you might expect. This is part of our goal - abstracting the _only the common functionality required by general application code_. 
+In general, we have opted to keep the interfaces as simple as possible. You will probably see interfaces with fewer functions and parameters than you might expect. Smaller interfaces are much easier to understand, implement, and use. Our goal is also to abstract _only the common functionality required by general application code_ - code that is designed to be independent of any particular hardware platform, OS, or SDK.
 
 We have generally left out initialization, configuration, and special operating modes. In our view, these details are hard to generalize (since each component, library, driver, etc. has slightly different options), and general application code does not need to access this information to do its job. Some part of the system will always be responsible for instantiating the specific implementation and mapping the implementation to an abstract interface. That part of the system can use the implementation's APIs to put the component in the system's expected state during initialization. That expectation means we can leave out a number of details.
 
