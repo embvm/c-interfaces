@@ -9,6 +9,24 @@ This is a collection of abstract interfaces written in C. You can view this coll
 
 This collection is intended to serve as a reference only. The interfaces are subject to change. Do not rely on this repository remaining fixed - no guarantees are provided. If you need something, make a copy!
 
+## Interface Conventions
+
+In general, our interface design adheres to the following conventions:
+
+- Interface types are nouns, and the first letter of the name will be capitalized (e.g., as in German)
+- Function names are verbs that describe the action taken. This means we prefer the use of `getTemperature()` over `temperature()`.
+- We have tried to be specific: `temp0.getTemperature()` is preferred over `temp0.read()`.
+	* There are examples in this repository that provide multiple values (such as the [barometric_sensor](virtual_devices/barometric_sensor.h), which can produce both *pressure* and *altitude*), and as such we have opted for more specific naming across the board.
+	+ We think it is reasonable to use something like `read` as the method name when accessing data from sensors. For example, you might have a consistent sensor "base" interface that expects `read` to be defined for all sensor types. This is a suitable approach, and these interfaces can be easily modified to support such cases.
+	
+## Interface Scope
+
+In general, we have opted to keep the interfaces as simple as possible. You will probably see interfaces with fewer functions than you might expect. This is part of our goal - abstracting the _only the common functionality required by general application code_. 
+
+We have generally left out initialization, configuration, and special operating modes. In our view, these details are hard to generalize (since each component, library, driver, etc. has slightly different options), and general application code does not need to access this information to do its job. Some part of the system will always be responsible for instantiating the specific implementation and mapping the implementation to an abstract interface. That part of the system can use the implementation's APIs to put the component in the system's expected state during initialization. That expectation means we can leave out a number of details.
+
+Because we have tried to keep the interfaces as lean as possible, we have focused on the core idea for each type of interface. These interfaces can naturally be extended in many ways. Whenever we find a reusable interface pattern, we will note it here. Do not feel constrained by our lean focus - free to compose, edit, and tune these interfaces to suit the needs of _your_ system!
+
 ## Abstract Interface Approach
 
 The abstract interfaces we specify here are generally going to be `struct`s of function pointers.
@@ -50,14 +68,6 @@ int32_t current_altitude = alt0.getAltitude();
 ```
 
 This basic approach can be extended to support inheritance and polymorphism. For more information, see ["Technique: Inheritance and Polymorphism in C"](https://embeddedartistry.com/fieldatlas/technique-inheritance-and-polymorphism-in-c/).
-
-## Interface Scope
-
-In general, we have opted to keep the interfaces as simple as possible. You will probably see interfaces with fewer functions than you might expect. This is part of our goal - abstracting the _only the common functionality required by general application code_. 
-
-We have generally left out initialization, configuration, and special operating modes. In our view, these details are hard to generalize (since each component, library, driver, etc. has slightly different options), and general application code does not need to access this information to do its job. Some part of the system will always be responsible for instantiating the specific implementation and mapping the implementation to an abstract interface. That part of the system can use the implementation's APIs to put the component in the system's expected state during initialization. That expectation means we can leave out a number of details.
-
-Because we have tried to keep the interfaces as lean as possible, we have focused on the core idea for each type of interface. These interfaces can naturally be extended in many ways. Whenever we find a reusable interface pattern, we will note it here. Do not feel constrained by our lean focus - free to compose, edit, and tune these interfaces to suit the needs of _your_ system!
 
 ## Further Reading
 
