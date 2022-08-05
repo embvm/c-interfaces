@@ -10,8 +10,8 @@
  * This header defines the core interfaces for a virtual humdity. Two samples
  * are provided:
  *
- * 1. A basic interface for reading humidity
- * 2. An interface expanded with support for callbacks
+ * 1. A basic interface for reading humidity (HumiditySensor)
+ * 2. An interface expanded with support for callbacks (HumiditySensor_withCb)
  *
  * ## Modifying the Interfaces
  *
