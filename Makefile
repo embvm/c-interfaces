@@ -12,6 +12,19 @@ main.o: test/main.c
 format:
 	@ clang-format -i $(ALL_HEADERS)
 
+.PHONY: docs
 docs:
-	@ mkdir -p buildresults/documentation
+	@ mkdir -p buildresults/docs
 	@ doxygen
+
+.PHONY: deploy-docs
+deploy-docs: docs
+	@ git branch | grep -q "gh-pages" && git branch -D gh-pages
+	@ git branch gh-pages master
+	@ git checkout gh-pages
+	@ mv buildresults/docs/html/ generated-documentation/
+	@ git add generated-documentation
+	@ git commit -am "Publish generated documentation"
+	@ git push -f gh-pages
+	@ git checkout -
+	@ git clean -f -d
