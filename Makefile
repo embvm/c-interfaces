@@ -22,9 +22,9 @@ deploy-docs: docs
 	@ git branch | grep -q "gh-pages" && git branch -D gh-pages
 	@ git branch gh-pages master
 	@ git checkout gh-pages
-	@ mv buildresults/docs/html/ generated-documentation/
-	@ git add generated-documentation
+	@ mv buildresults/docs/html/ docs/
+	@ git add docs/
 	@ git commit -am "Publish generated documentation"
 	@ git push -f origin gh-pages:gh-pages
 	@ git checkout -
-	@ rm -rf generated-documentation/
+	@ rm -rf docs/
