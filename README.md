@@ -10,6 +10,13 @@ This is a collection of abstract interfaces written in C. You can view this coll
 
 This collection is intended to serve as a reference only. The interfaces are subject to change. Do not rely on this repository remaining fixed - no guarantees are provided. If you need something, make a copy!
 
+## API Documentation
+
+Generated API documentation can be found on the [github-pages site for this repository.
+](https://embvm.github.io/c-interfaces/). You can [jump right to the list of types](https://embvm.github.io/c-interfaces/annotated.html) or [the list of files](https://embvm.github.io/c-interfaces/files.html).
+
+Note that some links in the front-page (README) will not work as they are targeted for GitHub and incompatible with Doxygen. Other links will work properly.
+
 ## Organization
 
 - [virtual_devices](virtual_devices/) contains abstract interfaces that can be mapped onto hardware devices.
