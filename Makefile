@@ -25,6 +25,6 @@ deploy-docs: docs
 	@ mv buildresults/docs/html/ generated-documentation/
 	@ git add generated-documentation
 	@ git commit -am "Publish generated documentation"
-	@ git push -f gh-pages
+	@ git push -f origin gh-pages:gh-pages
 	@ git checkout -
-	@ git clean -f -d
+	@ rm -rf generated-documentation/
