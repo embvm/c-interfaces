@@ -12,8 +12,7 @@ This collection is intended to serve as a reference only. The interfaces are sub
 
 ## API Documentation
 
-Generated API documentation can be found on the [github-pages site for this repository
-](https://embvm.github.io/c-interfaces/). You can [jump right to the list of types](https://embvm.github.io/c-interfaces/annotated.html) or [the list of files](https://embvm.github.io/c-interfaces/files.html).
+Generated API documentation can be found on the [github-pages site for this repository](https://embvm.github.io/c-interfaces/). You can [jump right to the list of types](https://embvm.github.io/c-interfaces/annotated.html) or [the list of files](https://embvm.github.io/c-interfaces/files.html).
 
 Note that some links in the front-page (README) will not work as they are targeted for GitHub and incompatible with Doxygen. Other links will work properly.
 
