@@ -47,6 +47,8 @@
  *
  * - The device produces barometric pressure readings
  * 	- This device reports barometric pressure in hectopascal (hPa)
+ * 	- The reported barometric pressure reading will be compensated for ambient temperature
+ *   by the implementation if it is required.
  * 	- Pressure will be formatted as a 32-bit fixed-point integer with format UQ22.10,
  *   giving a resolution of 0.001 hPa.
  * - This device produces barometric altitude readings
@@ -159,6 +161,8 @@ typedef void (*BarometricErrorCb)(void);
  *
  * - The device produces barometric pressure readings
  * 	- This device reports barometric pressure in hectopascal (hPa)
+ * 	- The reported barometric pressure reading will be compensated for ambient temperature
+ *   by the implementation if it is required.
  * 	- Pressure will be formatted as a 32-bit fixed-point integer with format UQ22.10,
  *    giving a resolution of 0.001 hPa.
  * - This device produces barometric altitude readings
@@ -308,6 +312,8 @@ typedef struct
  *
  * - The device produces barometric pressure readings
  * 	- This device reports barometric pressure in hectopascal (hPa)
+ * 	- The reported barometric pressure reading will be compensated for ambient temperature
+ *   by the implementation if it is required.
  * 	- Pressure will be formatted as a 32-bit fixed-point integer with format UQ22.10,
  *   giving a resolution of 0.001 hPa.
  * - This device produces barometric altitude readings

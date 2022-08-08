@@ -46,6 +46,8 @@
  * ## Fundamental Assumptions
  * - The device produces relative humidity (RH) readings
  * - The device reports RH as a percentage
+ * - The reported RH reading will be compensated for ambient temperature
+ *   by the implementation if it is required.
  * - The device will indicate whether the current reading is valid or invalid
  *
  * ## Implementation Notes
