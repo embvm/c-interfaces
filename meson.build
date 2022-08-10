@@ -5,5 +5,5 @@ project('Reusable Abstract Interfaces in C',
 )
 
 c_virtual_device_intf_dep = declare_dependency(
-	include_directories: include_directories('.', is_system: true)
+	include_directories: include_directories('virtual_devices', is_system: true)
 )
