@@ -245,6 +245,13 @@ typedef struct
 	 */
 	bool (*readAltitude)(int32_t* const altitude);
 
+	/** Set the sea level pressure
+	 *
+	 * @param[in] slp The current sea level pressure in hPa.
+	 * 	slp should be specified as an unsigned 32-bit fixed-point number in format UQ22.10.
+	 */
+	void (*setSeaLevelPressure)(uint32_t slp);
+
 	/** Register a NewBarometricSampleCb function
 	 *
 	 * This function will add the callback input to a list of functions to execute
@@ -355,6 +362,13 @@ typedef struct
 	 *  enqueued (e.g., the queue is full).
 	 */
 	bool (*readSample)(void);
+
+	/** Set the sea level pressure
+	 *
+	 * @param[in] slp The current sea level pressure in hPa.
+	 * 	slp should be specified as an unsigned 32-bit fixed-point number in format UQ22.10.
+	 */
+	void (*setSeaLevelPressure)(uint32_t slp);
 
 	/** Register a NewBarometricSampleCb function
 	 *
