@@ -74,7 +74,7 @@ typedef struct
 	 *
 	 * @returns True if the sample is valid, false if invalid (e.g., an error occured)
 	 */
-	bool (*getTemperature)(int32_t* const temperature);
+	bool (*readTemperature)(int32_t* const temperature);
 } TemperatureSensor;
 
 #pragma mark - With Callback Support -
@@ -169,7 +169,7 @@ typedef struct
 	 *
 	 * @returns True if the sample is valid, false if invalid (e.g., an error occured)
 	 */
-	bool (*getTemperature)(int32_t* const temperature);
+	bool (*readTemperature)(int32_t* const temperature);
 
 	/** Register a NewTemperatureSampleCb function
 	 *

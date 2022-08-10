@@ -63,7 +63,7 @@ typedef struct
 	 *
 	 * @returns True if the sample is valid, false if invalid (e.g., an error occured)
 	 */
-	bool (*getAltitude)(int32_t* const altitude);
+	bool (*readAltitude)(int32_t* const altitude);
 
 	/** Set the sea level pressure
 	 *
