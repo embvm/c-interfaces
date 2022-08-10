@@ -30,4 +30,4 @@ deploy-docs: docs
 	@ git checkout -
 	@ rm -rf docs/
 	@ git reset HEAD --hard
-	@ git stash pop
+	@ -git stash pop
