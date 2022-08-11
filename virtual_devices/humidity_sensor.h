@@ -29,7 +29,7 @@
  * - Simply return an integral relative humidity (because the application does not care for higher
  *   resolution than that), rounded according to your preferred rounding rules.
  * - Use a float
- * - Use a 32-bit integer with fixed-point format UQ22.10
+ * - Use a 32-bit integer with fixed-point format UQ22.10 or UQ16.16
  *   (giving us a range of [0, ~4 million] and resolution of 0.001)
  * - Use a 16-bit integer with fixed-point format UQ7.9 (giving us a range of [0, 128]
  * and resolution of [0.002])

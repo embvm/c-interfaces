@@ -34,6 +34,7 @@
  *   (0.0078°C). However, this is still well beyond the temperature range of sensors we work with.
  * - If higher resolution as important (or 32-bit values are preferred for processing reasons),
  *   providing a 32-bit fixed point integer with format Q21.10, gives a resolution of 0.001°C.
+ * - Use a standard of Q16 to simplify fixed point math across your entire system
  */
 
 #pragma mark - Basic Interface -

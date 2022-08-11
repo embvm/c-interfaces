@@ -16,7 +16,8 @@
  * There are a number of ways you might modify this interface to suit your needs:
  *
  * - Change the type of the altitude parameter (e.g., to a float)
- * - Change the fixed-point format
+ * - Change the fixed-point format (e.g., to adjust precision, or for a standard
+ *   like Q16 across all values in your program so you can simplify math operations)
  * - Return the altitude sample, and use a separate function to determine validity
  * - Using callbacks (see barometric_sensor.h or callback_function.h for an example)
  * - Supporting an asynchronous processing model (see barometric_sensor.h or

@@ -24,7 +24,8 @@
  *
  * - Change the type of the pressure parameter (e.g., to a float)
  * - Change the fixed-point format of the parameter (e.g., to 24.8, giving a wider range
- *   reduced resolution)
+ *   reduced resolution. Or adopt a standard like Q16 across all values in your program
+ *   so you can simplify math operations)
  * - Return the pressure sample, and use a separate function to determine validity.
  * - Specifying additional callback parameters
  * - Varying the types of callbacks used
