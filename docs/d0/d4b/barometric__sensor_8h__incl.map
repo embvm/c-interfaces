@@ -1,0 +1,5 @@
+<map id="virtual_devices/barometric_sensor.h" name="virtual_devices/barometric_sensor.h">
+<area shape="rect" id="node1" title="Example barometric pressure sensor interfaces that also support altitude calculations." alt="" coords="5,5,180,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="9,95,83,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="108,95,173,121"/>
+</map>
