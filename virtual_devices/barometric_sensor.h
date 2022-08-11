@@ -214,7 +214,7 @@ typedef struct
 	 *
 	 * @returns True if the sample is valid, false if invalid (e.g., an error occured)
 	 */
-	bool (*readPressure)(int32_t* const pressure);
+	bool (*readPressure)(uint32_t* const pressure);
 
 	/** Request an altitude sample from the device.
 	 *

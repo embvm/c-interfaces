@@ -73,7 +73,7 @@ typedef struct
 	 *
 	 * @returns True if the sample is valid, false if invalid (e.g., an error occured)
 	 */
-	bool (*getHumidity)(int8_t* const humidity);
+	bool (*getHumidity)(uint8_t* const humidity);
 } HumiditySensor;
 
 #pragma mark - With Callbacks -
@@ -93,7 +93,7 @@ typedef struct
  * @param[in] humidity The latest humidity sample.
  *  Humidity is specified as an integral perecentage.
  */
-typedef void (*NewHumiditySampleCb)(int16_t humidity);
+typedef void (*NewHumiditySampleCb)(uint8_t humidity);
 
 /** Callback function prototype for humidity sensor errors
  *
@@ -160,7 +160,7 @@ typedef struct
 	 *
 	 * @returns True if the sample is valid, false if invalid (e.g., an error occured)
 	 */
-	bool (*readHumidity)(int8_t* const humidity);
+	bool (*readHumidity)(uint8_t* const humidity);
 
 	/** Register a NewHumiditySampleCb function
 	 *
