@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: MIT
 
 #ifndef VIRTUAL_BAROMETRIC_SENSOR_H_
-#define
+#define VIRTUAL_BAROMETRIC_SENSOR_H_
 
 #include <stdbool.h>
 #include <stdint.h>
