@@ -19,7 +19,7 @@ docs:
 
 .PHONY: deploy-docs
 deploy-docs: docs
-	@ git stash
+	@ -git stash
 	@ git branch | grep -q "gh-pages" && git branch -D gh-pages
 	@ git branch gh-pages master
 	@ git checkout gh-pages
