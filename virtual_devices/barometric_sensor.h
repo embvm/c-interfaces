@@ -1,6 +1,9 @@
 // SPDX-FileCopyrightText: © 2022 Embedded Artistry LLC <contact@embeddedartistry.com>
 // SPDX-License-Identifier: MIT
 
+#ifndef VIRTUAL_BAROMETRIC_SENSOR_H_
+#define
+
 #include <stdbool.h>
 #include <stdint.h>
 
@@ -423,3 +426,5 @@ typedef struct
 	 */
 	void (*unregisterErrorCb)(const BarometricErrorCb callback);
 } BarometricSensor_asyncWithCb;
+
+#endif // VIRTUAL_BAROMETRIC_SENSOR_H_

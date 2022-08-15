@@ -1,6 +1,9 @@
 // SPDX-FileCopyrightText: © 2022 Embedded Artistry LLC <contact@embeddedartistry.com>
 // SPDX-License-Identifier: MIT
 
+#ifndef VIRTUAL_HUMIDITY_0
+#define VIRTUAL_HUMIDITY_0
+
 #include <stdbool.h>
 #include <stdint.h>
 
@@ -214,3 +217,5 @@ typedef struct
 	 */
 	void (*unregisterErrorCb)(const HumidityErrorCb callback);
 } HumiditySensor_withCb;
+
+#endif // VIRTUAL_HUMIDITY_0

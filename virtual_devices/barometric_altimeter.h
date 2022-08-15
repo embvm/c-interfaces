@@ -4,6 +4,9 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+#ifndef VIRTUAL_BAROMETRIC_ALTIMETER_H_
+#define VIRTUAL_BAROMETRIC_ALTIMETER_H_
+
 /** @file barometric_altimeter.h
  * Example barometric altimeter interface.
  *
@@ -73,3 +76,5 @@ typedef struct
 	 */
 	void (*setSeaLevelPressure)(const uint32_t slp);
 } BarometricAltimeter;
+
+#endif // VIRTUAL_BAROMETRIC_ALTIMETER_H_

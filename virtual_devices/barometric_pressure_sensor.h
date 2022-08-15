@@ -1,6 +1,9 @@
 // SPDX-FileCopyrightText: © 2022 Embedded Artistry LLC <contact@embeddedartistry.com>
 // SPDX-License-Identifier: MIT
 
+#ifndef VIRTUAL_BAROMETRIC_PRESSURE_H_
+#define VIRTUAL_BAROMETRIC_PRESSURE_H_
+
 #include <stdbool.h>
 #include <stdint.h>
 
@@ -71,3 +74,5 @@ typedef struct
 	 */
 	bool (*readPressure)(uint32_t* const pressure);
 } BarometricPressureSensor;
+
+#endif // VIRTUAL_BAROMETRIC_PRESSURE_H_
