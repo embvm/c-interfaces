@@ -76,7 +76,7 @@ typedef struct
 	 * @param[inout] Current temperature in °C.
 	 *	Temperature readings will be provided as a signed 16-bit fixed point integer in format Q7.8
 	 *
-	 * @returns True if the sample is valid, false if invalid (e.g., an error occured)
+	 * @returns True if the sample is valid, false if invalid (e.g., an error occurred)
 	 */
 	bool (*readTemperature)(int16_t* const temperature);
 } TemperatureSensor;
@@ -166,12 +166,12 @@ typedef struct
 	 *
 	 *  Temperature readings will be provided as a signed 16-bit fixed point integer in format Q7.8
 	 *
-	 * @returns True if the sample is valid, false if invalid (e.g., an error occured)
+	 * @returns True if the sample is valid, false if invalid (e.g., an error occurred)
 	 *
 	 * @param[inout] Current temperature in °C.
 	 *	Temperature readings will be provided as a signed 16-bit fixed point integer in format Q7.8
 	 *
-	 * @returns True if the sample is valid, false if invalid (e.g., an error occured)
+	 * @returns True if the sample is valid, false if invalid (e.g., an error occurred)
 	 */
 	bool (*readTemperature)(int16_t* const temperature);
 

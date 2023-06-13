@@ -86,7 +86,7 @@ typedef struct
 	 *  Pressure will be formatted as a 32-bit fixed-point integer with format UQ22.10,
 	 *  giving a resolution of 0.001 hPa.
 	 *
-	 * @returns True if the sample is valid, false if invalid (e.g., an error occured)
+	 * @returns True if the sample is valid, false if invalid (e.g., an error occurred)
 	 */
 	bool (*readPressure)(uint32_t* const pressure);
 
@@ -216,7 +216,7 @@ typedef struct
 	 *  Pressure will be formatted as a 32-bit fixed-point integer with format UQ22.10,
 	 *  giving a resolution of 0.001 hPa.
 	 *
-	 * @returns True if the sample is valid, false if invalid (e.g., an error occured)
+	 * @returns True if the sample is valid, false if invalid (e.g., an error occurred)
 	 */
 	bool (*readPressure)(uint32_t* const pressure);
 
@@ -245,7 +245,7 @@ typedef struct
 	 *
 	 *  Altitude will be corrected for Sea Level Pressure.
 	 *
-	 * @returns True if the sample is valid, false if invalid (e.g., an error occured)
+	 * @returns True if the sample is valid, false if invalid (e.g., an error occurred)
 	 */
 	bool (*readAltitude)(int32_t* const altitude);
 

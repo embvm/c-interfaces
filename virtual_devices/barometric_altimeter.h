@@ -65,7 +65,7 @@ typedef struct
 	 * @param[inout] Current altitude in meters (m), corrected for sea level pressure.
 	 *	Altitude is specified as a signed 32-bit fixed-point number in format Q21.10.
 	 *
-	 * @returns True if the sample is valid, false if invalid (e.g., an error occured)
+	 * @returns True if the sample is valid, false if invalid (e.g., an error occurred)
 	 */
 	bool (*readAltitude)(int32_t* const altitude);
 

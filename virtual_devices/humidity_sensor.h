@@ -74,7 +74,7 @@ typedef struct
 	 * @param[inout] Current relative humidity in %.
 	 *	Humidity is specified as an integral perecentage.
 	 *
-	 * @returns True if the sample is valid, false if invalid (e.g., an error occured)
+	 * @returns True if the sample is valid, false if invalid (e.g., an error occurred)
 	 */
 	bool (*getHumidity)(uint8_t* const humidity);
 } HumiditySensor;
@@ -161,7 +161,7 @@ typedef struct
 	 *
 	 *  Humidity is specified as an integral perecentage.
 	 *
-	 * @returns True if the sample is valid, false if invalid (e.g., an error occured)
+	 * @returns True if the sample is valid, false if invalid (e.g., an error occurred)
 	 */
 	bool (*readHumidity)(uint8_t* const humidity);
 
